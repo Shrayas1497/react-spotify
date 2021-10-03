@@ -69,4 +69,12 @@ app.get('lyrics',async(req,res) =>{
 const lyrics =await lyricsFinder(req.query.artist,req.query.track) || 'no lyrics found'
 res.json({lyrics})
 })
-app.listen(3001)
+ 
+app.use(express.static(path.join(__dirname, "/client")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
+
+app.listen(process.env.PORT || 3001)
+

@@ -5,7 +5,7 @@ import Player from "./Player"
 import {Container,Form} from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
-import axios from 'axios'
+import axiosInstance from '../../config'
 const spotifyApi = new SpotifyWebApi(
 {
 clientId:" d250697bb15c4b7eb3448f43218e067e"
@@ -26,7 +26,7 @@ export default function Dashboard ({code})
   }
   useEffect(()=>{
     if(!playingTrack) return 
-    axios.get('http://localhost:3001/lyrics',{
+    axiosInstance.get('http://localhost:3001/lyrics',{
       params:{
         track:playingTrack.title,
         artist:playingTrack.artist
