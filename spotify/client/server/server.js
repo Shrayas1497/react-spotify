@@ -14,7 +14,7 @@ app.post('/refresh',(req,res)=>
 const refreshToken =req.body.refreshToken
 console.log("hi")
 const spotifyApi= new SpotifyWebApi ({
-redirectUri:'http://localhost:3000',
+redirectUri:'https://react-better-spotify.herokuapp.com/',
 clientId:'d250697bb15c4b7eb3448f43218e067e',  
 clientSecret:'f9451d653d7b46ed800cb1bb78d6b859',
 refreshToken,
@@ -38,7 +38,7 @@ app.post('/login',(req,res)=>
 {
 const code = req.body.code
 const spotifyApi= new SpotifyWebApi ({
-redirectUri:'http://localhost:3000',
+redirectUri:'https://react-better-spotify.herokuapp.com/',
 clientId:'d250697bb15c4b7eb3448f43218e067e',  
 clientSecret:'f9451d653d7b46ed800cb1bb78d6b859',
 })

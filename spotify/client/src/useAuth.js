@@ -10,7 +10,7 @@ console.log(refreshToken)
 
     useEffect(() => {
     
-        axiosInstance.post('http://localhost:3001/login',
+        axiosInstance.post('https://react-better-spotify.herokuapp.com//login',
 {
 code,
 }).then(res => {
@@ -27,7 +27,7 @@ window.location ="/"
  useEffect(()=>{
 if (!refreshToken ||! expiresIn) return
 const interval=setInterval(()=> { 
-    axiosInstance.post('http://localhost:3001/refresh',
+    axiosInstance.post('https://react-better-spotify.herokuapp.com//refresh',
     {
     refreshToken,
     })

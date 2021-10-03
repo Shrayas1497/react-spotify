@@ -26,7 +26,7 @@ export default function Dashboard ({code})
   }
   useEffect(()=>{
     if(!playingTrack) return 
-    axiosInstance.get('http://localhost:3001/lyrics',{
+    axiosInstance.get('https://react-better-spotify.herokuapp.com//lyrics',{
       params:{
         track:playingTrack.title,
         artist:playingTrack.artist
